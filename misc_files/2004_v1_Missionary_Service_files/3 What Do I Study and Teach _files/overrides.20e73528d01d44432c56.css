@@ -1,0 +1,918 @@
+/* TODO: I hate this theme system and our colors.
+    We need to designers to pick better colors for each theme. */
+/*******************************************************************************
+ * These are default values for the global style variables we get from
+ * header/footer. The values from header/footer should trump these, but we
+ * should keep them up to date in case the vars file from header/footer fails.
+ *******************************************************************************/
+html {
+    --grey2: #F7F8F8;
+    --grey3: #EFF0F0;
+    --grey5: #E0E2E2;
+    --grey10: #D0D3D3;
+    --grey15: #BDC0C0;
+    --grey20: #A9ADAD;
+    --grey25: #9DA1A1;
+    --grey30: #878A8C;
+    --grey35: #676B6E;
+    --grey40: #53575B;
+    --grey60: #3A3D40;
+    --grey90: #0D0F10;
+    --yellow5: #FFD61A;
+    --yellow10: #FFB81C;
+    --yellow15: #FAA61A;
+    --yellow20: #F68D2E;
+    --yellow25: #E66A1F;
+    --yellow30: #D45311;
+    --yellow35: #974A07;
+    --yellow40: #674730;
+    --red5: #FDA1B2;
+    --red10: #FC7473;
+    --red15: #E10F5A;
+    --red20: #BD0057;
+    --red25: #A6004E;
+    --red30: #8F124A;
+    --red35: #7D003F;
+    --red40: #6E0D33;
+    --blue5: #B0EEFC;
+    --blue10: #7DE3F4;
+    --blue15: #49CCE6;
+    --blue20: #01B6D1;
+    --blue25: #007DA5;
+    --blue30: #006184;
+    --blue35: #005175;
+    --blue40: #003057;
+    --green5: #D3E952;
+    --green10: #BED21E;
+    --green15: #93C742;
+    --green20: #6DB344;
+    --green25: #50A83E;
+    --green30: #318D43;
+    --green35: #206B3F;
+    --green40: #235C35;
+    --text120: #212225;
+    --black: #000000;
+    --white: #FFFFFF;
+    --info10: #20ABD7;
+    --info40: #157493;
+    --info60: #105970;
+    --confirmation10: #A3D287;
+    --confirmation40: #74BB49;
+    --confirmation60: #375A22;
+    --warning10: #FFD072;
+    --warning40: #FFAE0C;
+    --warning60: #8F4200;
+    --danger10: #FC7473;
+    --danger40: #DC3838;
+    --danger60: #B00504;
+    --highlightBlue: #E9F7FC;
+    --highlightCyan: #DDFAFB;
+    --highlightGreen: #EFF7EA;
+    --highlightYellow: #FFF8E9;
+    --highlightAmber: #FFEFDE;
+    --highlightRed: #FEE8E7;
+    --highlightMagenta: #FEE8FC;
+    --highlightViolet: #F3E9FF;
+    --colorFacebook: #3B5998;
+    --colorInstagram: #3C5A96;
+    --colorTwitter: #00B6F1;
+    --colorPinterest: #CB2027;
+    --colorYoutube: #CD201F;
+    --colorOdnok: #ED812B;
+    --colorVk: #45668E;
+    --boxShadowRaised: 0 2px 4px 0 rgba(0, 0, 0, 0.20);
+    --boxShadowDetached: 0 4px 8px 0 rgba(0, 0, 0, 0.20);
+    --boxShadowOverlaid: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+    --boxShadowPoppedOut: 0 16px 32px 0 rgba(0, 0, 0, 0.20);
+    --sans: "Ensign:Sans", Arial, "noto sans" , sans-serif;
+    --serif: "Ensign:Serif", "Georgia", "Times New Roman", serif;
+    --monospace: Courier, "Courier New", monospace;
+    --fontWeightLight: 300;
+    --fontWeightNormal: 400;
+    --fontWeightSemiBold: 600;
+    --fontWeightBold: 700;
+    --fontSizeRoot: 100%;
+    --fontSize11: 0.6875rem;
+    --fontSize13: 0.8125rem;
+    --fontSize14: 0.875rem;
+    --fontSize16: 1rem;
+    --fontSize18: 1.125rem;
+    --fontSize20: 1.25rem;
+    --fontSize28: 1.75rem;
+    --fontSize32: 2rem;
+    --fontSize42: 2.625rem;
+    --lineHeightTight: 1.2;
+    --lineHeight: 1.4;
+    --lineHeightLoose: 1.6;
+    --spacing4: 0.25rem;
+    --spacing8: 0.5rem;
+    --spacing16: 1rem;
+    --spacing24: 1.5rem;
+    --spacing32: 2rem;
+    --spacing48: 3rem;
+    --spacing64: 4rem;
+    --spacing96: 6rem;
+    --spacing128: 8rem;
+    --breakWidth480: 480px;
+    --breakWidth600: 600px;
+    --breakWidth840: 840px;
+    --breakWidth960: 960px;
+    --breakWidth1280: 1280px;
+    --breakWidth1440: 1440px;
+    --breakWidth1600: 1600px;
+    --zIndexHigherThanPlatform: 200;
+}
+.night {
+    --accent: var(--yellow10);
+    --accent-focus: var(--yellow15);
+    --background-primary: var(--text120);
+    --background-secondary: #242528;
+    --background-secondary-accent: #323335;
+    --background-disabled: #323335;
+    --background-active-verse: #908801;
+    --border-primary: #999A9B;
+    --icon-primary: var(--text-primary);
+    --icon-secondary: #999A9B;
+    --icon-link: #6BA5AE;
+    --scrollbar-thumb-primary: #A8AAAC;
+    --scrollbar-thumb-secondary: #DEE1E1;
+    --text-primary: #DEE1E1;
+    --text-secondary: #A8AAAC;
+    --text-link: #6BA5AE;
+
+    /* Variables for tags: */
+    --tag-accent: rgba(255, 184, 28, 0.15);
+    --tag-hover-selected: rgba(255, 184, 28, 0.6);
+    --tag-text-selected: var(--text120);
+
+    /* Variables for buttons */
+    --button-background-disabled: var(--grey40);
+    --button-color-disabled: var(--text120);
+    --button-primary-color: var(--text120);
+    --button-secondary-color: rgba(255, 184, 28, 0.25);
+    --button-ghost-background-active: var(--grey40);
+    --button-ghost-background-hover: rgba(83, 87, 91, 0.6);
+    --button-icon-background-active: var(--grey40);
+    --button-icon-background-hover: rgba(83, 87, 91, 0.6);
+    --button-icon-color-disabled: var(--grey30);
+}
+.sepia {
+    --accent: #D35211;
+    --accent-focus: #9B2000;
+    --background-primary: #FBF4E6;
+    --background-secondary: #FBF4E6;
+    --background-secondary-accent: var(--white);
+    --background-active-verse: #EAEA95;
+    --border-primary: #6E4E33;
+    --icon-primary: var(--text-primary);
+    --icon-secondary: #8A8782;
+    --icon-link: #61A6BB;
+    --scrollbar-thumb-primary: #6E4E33;
+    --scrollbar-thumb-secondary: #2F1C08;
+    --text-primary: #2F1C08;
+    --text-secondary: #6E4E33;
+    --text-link: #6BA5AE;
+
+    /* Variables for tags: */
+    --tag-accent: rgba(211, 82, 17, 0.15);
+    --tag-hover-selected: rgba(211, 82, 17, 0.6);
+    --tag-text-selected: var(--white);
+
+    /* Variables for buttons */
+    --button-background-disabled: var(--grey3);
+    --button-color-disabled: var(--grey30);
+    --button-primary-color: var(--white);
+    --button-secondary-color: rgba(211, 82, 17, 0.2);
+    --button-ghost-background-active: #E1DBCF;
+    --button-ghost-background-hover: rgba(225, 219, 207, 0.6);
+    --button-icon-background-active: #E1DBCF;
+    --button-icon-background-hover: rgba(225, 219, 207, 0.6);
+    --button-icon-color-disabled: var(--grey20);
+}
+platform-footer {
+    --footerThemeBackground: var(--background-primary);
+    --footerThemeText: var(--text-primary);
+    --footerThemeLogo: var(--text-primary);
+    --footerThemeCopyright: var(--text-secondary);
+}
+:root {
+    --input-slider-primary: #D0D3D3;
+    --input-slider-secondary: #899090;
+
+    --customGrey1: #e6e6e6;
+    --customGrey2: #bbbbbb;
+    --customGrey3: #a2aaad;
+    --customGrey4: #97999b;
+    --customGrey5: #53565a;
+    --footerGrey: #f1f1f3;
+
+    --sans: 'Ensign:Sans', Arial, 'noto sans', sans-serif;
+    --serif: 'Ensign:Serif', 'Georgia', 'Times New Roman', serif;
+    --monospace: 'Courier New', Courier, monospace;
+
+    --fontSize10: 0.625rem;
+    --fontSize12: 0.75rem;
+    --fontSize22: 1.375rem;
+    --fontSize26: 1.625rem;
+    --fontSize30: 1.875rem;
+    --fontSize36: 2.25rem;
+    --fontSize52: 3.25rem;
+
+    --scrollbar: #929292;
+    --scrollbar-hover: #707070;
+    --scrollbar-background: #F8F8F8;
+    --scrollbar-border: #E8E8E8;
+
+    --spacing10: 0.625rem;
+    --spacing12: 0.75rem;
+    --spacing20: 1.25rem;
+    --spacing40: 2.5rem;
+    --spacing60: 3.75rem;
+
+    @custom-media --mq-50-only (min-width: 0em) and (max-width: 24.999em);
+    @custom-media --mq-reader (min-width: 80em);
+    @custom-media --mq-mobile (min-width: 46em);
+
+    @custom-media --xs-min (min-width: 320px);
+    @custom-media --xs-max (max-width: 319px);
+    @custom-media --xs-only (min-width: 320px) and (max-width: 499px);
+
+    @custom-media --s-min (min-width: 500px);
+    @custom-media --s-max (max-width: 499px);
+    @custom-media --s-only (min-width: 500) and (max-width: 639.999);
+
+    @custom-media --m-min (min-width: 640px);
+    @custom-media --m-max (max-width: 639px);
+    @custom-media --m-only (min-width: 640) and (max-width: 899.999);
+
+    @custom-media --l-min (min-width: 900px);
+    @custom-media --l-max (max-width: 899px);
+    @custom-media --l-only (min-width: 900px) and (max-width: 1199px);
+
+    @custom-media --xl-min (min-width: 1200px);
+    @custom-media --xl-max (max-width: 1199px);
+    @custom-media --xl-only (min-width: 1200px) and (max-width: 1499px);
+
+    @custom-media --xxl-min (min-width: 1500px);
+    @custom-media --xxl-max (max-width: 1499px);
+}
+/*  =============================================  */
+/*  ==============  GLOBAL STYLES  ==============  */
+/*  =============================================  */
+html {
+    -webkit-overflow-scrolling: touch;
+    height: 100vh;
+    height: -webkit-fill-available;
+    height: -moz-available;
+    height: stretch;
+}
+@supports (height: -moz-available) {
+html {
+        height: 100vh;
+}
+    }
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow: auto;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    min-height: -moz-available;
+    min-height: stretch;
+    width: 100%;
+}
+@supports (height: -moz-available) {
+body {
+        height: 100vh;
+}
+    }
+/******
+    * header footer forces the body to be display block and no one knows if it's still needed
+    * this will force it to be flex and if we don't see any issues, we can request header/footer
+    * to remove the display block rule
+    ******/
+body[class][class][class] {
+        display: flex !important;
+    }
+body.force-scrollbar {
+        scrollbar-color: #929292 #F8F8F8;
+        scrollbar-color: var(--scrollbar) var(--scrollbar-background);
+        scrollbar-width: 16px;
+    }
+body.force-scrollbar::-webkit-scrollbar {
+            width: 16px;
+        }
+body.force-scrollbar::-webkit-scrollbar-thumb {
+            border: 2.5px solid transparent;
+            border-radius: 12px;
+            background-color: #929292;
+            background-color: var(--scrollbar);
+            background-clip: content-box;
+        }
+body.force-scrollbar::-webkit-scrollbar-thumb:hover {
+                background-color: #707070;
+                background-color: var(--scrollbar-hover);
+            }
+body.force-scrollbar::-webkit-scrollbar-track {
+            background-color: #F8F8F8;
+            background-color: var(--scrollbar-background);
+            border: 1px solid #E8E8E8;
+            border: 1px solid var(--scrollbar-border);
+        }
+td,
+th {
+    -webkit-padding-end: 1em;
+            padding-inline-end: 1em;
+    -webkit-padding-after: 0.62em;
+            padding-block-end: 0.62em;
+}
+figure {
+    margin: 0;
+}
+article[data-aid-version] .page-break {
+    height: 0;
+    pointer-events: none;
+}
+article[data-aid-version] .page-break::after {
+        right: auto;
+        right: initial;
+        inset-inline-end: 12px;
+        line-height: 1;
+        position: fixed;
+        transform: translate(8px, -2.3em) rotate(-90deg);
+        transform-origin: bottom right;
+    }
+@media (min-width: 46rem) {
+article[data-aid-version] .page-break::after {
+            inset-inline-end: 22px;
+            transform: translateY(-1.35em);
+    }
+        }
+p article[data-aid-version] .page-break::after {
+            z-index: -1;
+    }
+article[data-aid-version] .active-item::before, article[data-aid-version] .bookmarkHighlight::before {
+        content: '';
+        height: calc(0 + 1rem);
+        height: calc(var(--height, 0) + 1rem);
+        position: absolute;
+        transform: translateY(-0.5rem);
+        -webkit-border-start: 3px solid #01B6D1;
+                border-inline-start: 3px solid #01B6D1;
+        -webkit-border-start: 3px solid var(--accent, var(--blue20));
+                border-inline-start: 3px solid var(--accent, var(--blue20));
+        inset-inline-start: 1.25rem;
+    }
+@media (min-width: 46em) {
+article[data-aid-version] .active-item::before, article[data-aid-version] .bookmarkHighlight::before {
+            inset-inline-start: 3.25rem;
+    }
+        }
+article[data-aid-version] .bookmarkHighlight::before {
+    border-color: #D0D3D3;
+    border-color: var(--border-primary, var(--grey10));
+}
+@media print {
+    /* The rules with "display: block !important;" are to fix a firefox bug where printing breaks on
+    display flex/grid/inline-block https://stackoverflow.com/questions/4609007/firefox-printing-only-1st-page  */
+    body[class][class][class] {
+        display: block !important;
+    }
+
+    #app {
+        display: block !important;
+    }
+
+        #app > div {
+            display: block !important;
+        }
+
+        #app main {
+            display: block !important;
+        }
+
+        #app main > div.reader {
+            display: block !important;
+        }
+
+        #app aside, #app figure {
+            page-break-inside: avoid;
+        }
+            #app [data-aid-version] figure.image,
+            #app [data-aid-version] .no-print,
+            #app [data-aid-version] img {
+                display: none;
+            }
+
+            #app [data-aid-version] figure.diagram {
+                display: block;
+            }
+
+                #app [data-aid-version] figure.diagram img {
+                    display: inline-block;
+                }
+        .print-show-footnotes:not(.print-hide-footnotes--override) #app span sup, .print-show-footnotes--override #app span sup {
+            display: inline;
+        }
+            .print-show-footnotes:not(.print-hide-footnotes--override) #app footer.notes, .print-show-footnotes--override #app footer.notes {
+                display: block;
+            }
+
+                .print-show-footnotes:not(.print-hide-footnotes--override) #app footer.notes li[data-full-marker] p, .print-show-footnotes--override #app footer.notes li[data-full-marker] p {
+                    -webkit-padding-start: 40px;
+                            padding-inline-start: 40px;
+                }
+
+            .print-show-footnotes:not(.print-hide-footnotes--override) #app footer.study-notes, .print-show-footnotes--override #app footer.study-notes {
+                display: block;
+            }
+
+                .print-show-footnotes:not(.print-hide-footnotes--override) #app footer.study-notes li, .print-show-footnotes--override #app footer.study-notes li {
+                    -moz-column-break-inside: auto;
+                         break-inside: auto;
+                    page-break-inside: auto;
+                }
+
+                .print-show-footnotes:not(.print-hide-footnotes--override) #app footer.study-notes li[data-full-marker], .print-show-footnotes--override #app footer.study-notes li[data-full-marker] {
+                    -moz-column-break-inside: avoid;
+                         break-inside: avoid;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    page-break-inside: avoid;
+                }
+
+                    .print-show-footnotes:not(.print-hide-footnotes--override) #app footer.study-notes li[data-full-marker]::before, .print-show-footnotes--override #app footer.study-notes li[data-full-marker]::before {
+                        content: attr(data-full-marker);
+                        flex: 0 0 40px;
+                    }
+        .print-hide-footnotes:not(.print-show-footnotes--override) #app a sup, .print-hide-footnotes--override #app a sup {
+            display: none;
+        }
+
+    #app mark {
+        /* for printing background color, aka highlights */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .print-hide-highlights #app mark {
+        background: none;
+        box-shadow: none;
+    }
+}
+/*  =============================================  */
+/*  ==============  HEADER STYLES  ==============  */
+/*  =============================================  */
+h1,
+body > header > .subtitle {
+    inset-block-start: 0;
+}
+.title-number {
+    inset-block-start: 7px;
+}
+h1 {
+    font-family: 'Ensign:Serif', 'Georgia', 'Times New Roman', serif;
+    font-family: var(--serif);
+    position: static;
+    position: initial;
+}
+h1 > .dominant {
+    font-size: 2.25rem;
+    font-size: var(--fontSize36);
+}
+/*  =============================================  */
+/*  =============  APP LEVEL STYLES  ============  */
+/*  =============================================  */
+.app {
+    min-height: 50vh;
+    -webkit-margin-after: -100px;
+            margin-block-end: -100px;
+}
+#app {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+}
+#app article[data-aid-version] div.body,
+#cross-link-overlay article[data-aid-version] div.body {
+    --increment: 1;
+
+    color: #000000;
+
+    color: var(--text-primary, var(--black));
+    font-weight: 400;
+    font-weight: var(--fontWeightNormal);
+    padding-inline: 0;
+
+    font-size: calc(1.125rem * 1);
+
+    font-size: calc(1.125rem * var(--increment, 1));
+}
+#app article[data-aid-version] div.body.fontSansSerif, #cross-link-overlay article[data-aid-version] div.body.fontSansSerif {
+        font-family: 'Ensign:Sans', Arial, 'noto sans', sans-serif;
+        font-family: var(--sans);
+    }
+#app article[data-aid-version] div.body.fontSansSerif header *, #cross-link-overlay article[data-aid-version] div.body.fontSansSerif header * {
+            font-family: 'Ensign:Sans', Arial, 'noto sans', sans-serif;
+            font-family: var(--sans);
+        }
+#app article[data-aid-version] div.body a, #cross-link-overlay article[data-aid-version] div.body a {
+        color: #157493;
+        color: var(--text-link, var(--info40));
+    }
+#app article[data-aid-version] div.body a sup[data-value]:before, #cross-link-overlay article[data-aid-version] div.body a sup[data-value]:before {
+                content: attr(data-value);
+                position: relative;
+            }
+#app article[data-aid-version] div.body .ActionBar a, #cross-link-overlay article[data-aid-version] div.body .ActionBar a {
+        color: #000000;
+        color: var(--text-primary, var(--black));
+    }
+section[class*='AB'] article .body {
+    margin-top: -50px;
+    padding-top: 0;
+}
+section[class*='ABV05'] article .body {
+    margin-top: -30px;
+    padding-top: 0;
+}
+section[class*='ABV05'] .selectionContextMenu-V05 {
+    position: absolute;
+    top: -5px;
+}
+@media screen and (max-width: 669px) {
+    section[class*='AB'] article .body,
+    section[class*='ABV05'] article .body {
+        margin-top: 0;
+        padding-top: 0px;
+    }
+}
+@media print {
+    #app article[data-aid-version] div.body,
+    #app #cross-link-overlay article[data-aid-version] div.body {
+        color: #000000;
+        color: var(--black);
+    }
+
+        #app article[data-aid-version] div.body a, #app #cross-link-overlay article[data-aid-version] div.body a {
+            color: #157493;
+            color: var(--info40);
+        }
+}
+#page {
+    display: contents;
+}
+#portalRoot {
+    z-index: 1400;
+    position: relative;
+}
+.platform-mask-blurred #portalRoot {
+    filter: blur(0);
+}
+.body-block {
+    margin: 0;
+}
+article[data-aid-version] div.body {
+    padding: 70px 13.5%;
+}
+/*  =============================================  */
+/*  =============  PLATFORM STYLES  =============  */
+/*  =============================================  */
+/*  ==================  FOOTER  =================  */
+.LDSORGFooter {
+    z-index: 600;
+}
+/*  ==================  GENERAL  =================  */
+a.pf-popup__trigger {
+    color: white;
+}
+platform-header .header-placeholder {
+    min-height: 120px;
+    position: relative;
+}
+platform-header .header-placeholder::after,
+    platform-header .header-placeholder::before {
+        background-image: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.13),
+            transparent
+        );
+        content: '';
+        height: 4px;
+        inset-block-end: -4px;
+        inset-inline-start: 0;
+        position: absolute;
+        width: 100%;
+        z-index: 35;
+    }
+platform-header .header-placeholder::before {
+        background-image: linear-gradient(
+            180deg,
+            transparent,
+            rgba(0, 0, 0, 0.13)
+        );
+        inset-block-end: 40px;
+    }
+/*  ==============================================  */
+/*  ==============  SPECIFIC STYLES  =============  */
+/*  ==============================================  */
+/*  ============  MANUALS BLOCK QUOTES  ============*/
+[data-aid-version] blockquote > img {
+    float: inline-start;
+    -webkit-margin-after: 15px;
+            margin-block-end: 15px;
+    margin-inline: 1.6em 20px;
+    padding: 0;
+    width: 86px;
+}
+/*  =============  PREACH MY GOSPEL  =============  */
+article[data-aid-version][data-uri*='/manual/preach-my-gospel-a-guide-to-missionary-service/']
+    .body-block,
+article[data-aid-version][data-uri*='/manual/preach-my-gospel-a-guide-to-missionary-service/']
+    .resources,
+article[data-aid-version][data-uri*='/manual/preach-my-gospel-a-guide-to-missionary-service/'][data-uri$='remember-this']
+    .body {
+    -webkit-margin-after: 0;
+            margin-block-end: 0;
+    margin-inline: 0;
+}
+article[data-aid-version][data-uri*='/manual/preach-my-gospel-a-guide-to-missionary-service/']
+    .body
+    > header
+    h1,
+article[data-aid-version][data-uri*='/manual/preach-my-gospel-a-guide-to-missionary-service/']
+    .body
+    > header
+    .subtitle {
+    padding-inline: 0;
+}
+article[data-aid-version][data-uri*='/manual/preach-my-gospel-a-guide-to-missionary-service/']:not([data-uri$='lesson-4-the-commandments']):not([data-uri$='lesson-5-laws-and-ordinances']):not([data-uri$='introduction-how-can-i-best-use-preach-my-gospel'])
+    .body-block
+    > section:last-of-type {
+    margin-inline: 0;
+}
+@media (max-width: 40rem) {
+        [dir="rtl"] article[data-aid-version][data-uri *= "/manual/preach-my-gospel-a-guide-to-missionary-service/"] .page-break:after {
+            inset-inline-end: -6px;
+        }
+    }
+/*  =============  YOUTH CURRICULUM  =============  */
+article[data-aid-version][data-uri*='/youth/learn/'][data-uri$='/overview']
+    .body-block {
+    padding: 0;
+}
+/*  =============  _MANIFEST AND _CONTENTS STYLES  =============  */
+article[data-aid-version][data-uri$='_manifest'] header, article[data-aid-version][data-uri$='_contents'] header {
+        -webkit-margin-after: 2rem;
+                margin-block-end: 2rem;
+        -webkit-margin-after: var(--spacing32);
+                margin-block-end: var(--spacing32);
+    }
+article[data-aid-version][data-uri$='_manifest'] header .title, article[data-aid-version][data-uri$='_contents'] header .title {
+            font-family: 'Ensign:Sans', Arial, 'noto sans', sans-serif;
+            font-family: var(--sans);
+            font-size: 2.625rem;
+            font-size: var(--fontSize42);
+            color: #000000;
+            color: var(--text-primary, var(--black));
+        }
+article[data-aid-version][data-uri$='_manifest'] header .subtitle, article[data-aid-version][data-uri$='_contents'] header .subtitle {
+            margin-block: 2rem;
+            margin-block: var(--spacing32);
+            font-weight: 300;
+            font-weight: var(--fontWeightLight);
+            color: #000000;
+            color: var(--text-primary, var(--black));
+        }
+article[data-aid-version][data-uri$='_manifest'] header .deck, article[data-aid-version][data-uri$='_contents'] header .deck {
+            margin-block: 1rem;
+            margin-block: var(--spacing16);
+            color: #000000;
+            color: var(--text-primary, var(--black));
+        }
+/* formal stylings for scriptures and conference */
+article[data-aid-version][data-uri$='_manifest'][data-uri^='/scriptures'] header .title, article[data-aid-version][data-uri$='_contents'][data-uri^='/scriptures'] header .title, article[data-aid-version][data-uri$='_manifest'][data-uri^='/general-conference'] header .title, article[data-aid-version][data-uri$='_contents'][data-uri^='/general-conference'] header .title {
+            font-family: 'Ensign:Serif', 'Georgia', 'Times New Roman', serif;
+            font-family: var(--serif);
+            font-weight: 400;
+            font-weight: var(--fontWeightNormal);
+        }
+article[data-aid-version][data-uri$='_manifest'][data-uri^='/scriptures'] header .subtitle, article[data-aid-version][data-uri$='_contents'][data-uri^='/scriptures'] header .subtitle, article[data-aid-version][data-uri$='_manifest'][data-uri^='/general-conference'] header .subtitle, article[data-aid-version][data-uri$='_contents'][data-uri^='/general-conference'] header .subtitle {
+            font-family: 'Ensign:Serif', 'Georgia', 'Times New Roman', serif;
+            font-family: var(--serif);
+            font-weight: 400;
+            font-weight: var(--fontWeightNormal);
+        }
+article[data-aid-version][data-uri$='_manifest'] ul, article[data-aid-version][data-uri$='_contents'] ul {
+        -webkit-padding-start: 0;
+                padding-inline-start: 0;
+    }
+article[data-aid-version][data-uri$='_manifest'] .label, article[data-aid-version][data-uri$='_contents'] .label {
+        padding: 2rem 0;
+        padding: var(--spacing32) 0;
+    }
+article[data-aid-version][data-uri$='_manifest'] .primaryMeta,
+    article[data-aid-version][data-uri$='_contents'] .primaryMeta,
+    article[data-aid-version][data-uri$='_manifest'] .secondaryMeta,
+    article[data-aid-version][data-uri$='_contents'] .secondaryMeta {
+        display: inline;
+    }
+/*  =============  THEME OVERIDE STYLES  =============  */
+article.global-template-mobile_lesson[data-aid-version],
+    article.global-template-mobile_lesson[data-aid-version] .body-block table dt,
+    article.global-template-mobile_lesson[data-aid-version] .body-block table p,
+    article.global-template-mobile_lesson[data-aid-version] .body-block table ul,
+    article.global-template-mobile_lesson[data-aid-version] .body-block table ol,
+    article.global-template-mobile_lesson[data-aid-version] aside.annotation,
+    article.global-template-mobile_lesson[data-aid-version] aside.annotation header .title,
+    article.global-template-mobile_lesson[data-aid-version] aside.more-info,
+    article.global-template-mobile_lesson[data-aid-version] aside.more-info header .title,
+    article.global-template-mobile_lesson[data-aid-version] aside.sidebar,
+    article.global-template-mobile_lesson[data-aid-version] aside.sidebar header .title,
+    article.global-template-mobile_lesson[data-aid-version] figcaption ol,
+    article.global-template-mobile_lesson[data-aid-version] figcaption p,
+    article.global-template-mobile_lesson[data-aid-version] figcaption ul,
+    article.global-template-mobile_lesson[data-aid-version] figure.for-teacher,
+    article.global-template-mobile_lesson[data-aid-version] figure.for-teacher header .title,
+    article.global-template-mobile_lesson[data-aid-version] figure.teaching-method,
+    article.global-template-mobile_lesson[data-aid-version]
+        figure.teaching-method
+        header
+        .title,
+    article.global-template-mobile_lesson[data-aid-version] table dt,
+    article.global-template-mobile_lesson[data-aid-version] table ol,
+    article.global-template-mobile_lesson[data-aid-version] table p,
+    article.global-template-mobile_lesson[data-aid-version] table ul {
+        color: #53575B;
+        color: var(--text-secondary, var(--grey40));
+    }
+article.global-template-mobile_lesson[data-aid-version] aside.annotation aside.quote,
+    article.global-template-mobile_lesson[data-aid-version] aside.annotation blockquote,
+    article.global-template-mobile_lesson[data-aid-version] aside.more-info aside.quote,
+    article.global-template-mobile_lesson[data-aid-version] aside.more-info blockquote,
+    article.global-template-mobile_lesson[data-aid-version] aside.sidebar aside.quote,
+    article.global-template-mobile_lesson[data-aid-version] aside.sidebar blockquote,
+    article.global-template-mobile_lesson[data-aid-version] figure.for-teacher aside.quote,
+    article.global-template-mobile_lesson[data-aid-version] figure.for-teacher blockquote,
+    article.global-template-mobile_lesson[data-aid-version] figure.teaching-method aside.quote,
+    article.global-template-mobile_lesson[data-aid-version] figure.teaching-method blockquote,
+    article.preach-my-gospel-a-guide-to-missionary-service[data-aid-version][class]
+        figure
+        > figcaption
+        > p,
+    article.preach-my-gospel-a-guide-to-missionary-service[data-aid-version]
+        .bullet[class]
+        li
+        p,
+    article.preach-my-gospel-a-guide-to-missionary-service[data-aid-version]
+        .for-teacher
+        > section
+        > header
+        > .title,
+    article.preach-my-gospel-a-guide-to-missionary-service[data-aid-version] .no-marker li p,
+    article.preach-my-gospel-a-guide-to-missionary-service[data-aid-version] .decimal li p,
+    article.preach-my-gospel-a-guide-to-missionary-service[data-aid-version] aside.quote p,
+    article.preach-my-gospel-a-guide-to-missionary-service[data-aid-version]
+        aside.quote
+        .citation-info
+        > p,
+    article.preach-my-gospel-a-guide-to-missionary-service[data-aid-version][data-uri$='how-do-i-use-time-wisely']
+        .decimal
+        li
+        p,
+    article.preach-my-gospel-a-guide-to-missionary-service[data-aid-version]:not([data-uri$='lesson-4-the-commandments']):not([data-uri$='lesson-5-laws-and-ordinances']):not([data-uri$='introduction-how-can-i-best-use-preach-my-gospel'])
+        .body-block
+        > section:last-of-type
+        > header
+        > h2 {
+        color: #212225;
+        color: var(--text-primary, var(--text120));
+    }
+article.preach-my-gospel-a-guide-to-missionary-service[data-aid-version] .credit > p {
+        color: #7d7d7d;
+        color: var(--text-secondary, #7d7d7d);
+    }
+.night article.preach-my-gospel-a-guide-to-missionary-service[data-aid-version] .decimal li {
+            color: #212225 !important;
+            color: var(--text-primary, var(--text120)) !important;
+        }
+.night article.preach-my-gospel-a-guide-to-missionary-service[data-aid-version] figure {
+            background-color: rgba(255,240,214,0.1);
+        }
+.night article.preach-my-gospel-a-guide-to-missionary-service[data-aid-version] figure a {
+                color: #49CCE6 !important;
+                color: var(--blue15) !important;
+            }
+.night article.preach-my-gospel-a-guide-to-missionary-service[data-aid-version][data-uri*='lesson'] h2 {
+            color: #9E4D7D;
+        }
+article.proclamations[data-aid-version] h1,
+    article.proclamations[data-aid-version] header > .subtitle,
+    article.proclamations[data-aid-version] figure .title,
+    article.proclamations[data-aid-version] .byline p,
+    article.proclamations[data-aid-version] .epigraph {
+        color: #5b1400;
+        color: var(--text-primary, #5b1400);
+    }
+@media print {
+        #app .global-template-mobile_lesson,
+        #app .global-template-mobile_lesson .body-block table dt,
+        #app .global-template-mobile_lesson .body-block table p,
+        #app .global-template-mobile_lesson .body-block table ul,
+        #app .global-template-mobile_lesson .body-block table ol,
+        #app .global-template-mobile_lesson aside.annotation,
+        #app .global-template-mobile_lesson aside.annotation header .title,
+        #app .global-template-mobile_lesson aside.more-info,
+        #app .global-template-mobile_lesson aside.more-info header .title,
+        #app .global-template-mobile_lesson aside.sidebar,
+        #app .global-template-mobile_lesson aside.sidebar header .title,
+        #app .global-template-mobile_lesson figcaption ol,
+        #app .global-template-mobile_lesson figcaption p,
+        #app .global-template-mobile_lesson figcaption ul,
+        #app .global-template-mobile_lesson figure.for-teacher,
+        #app
+            .global-template-mobile_lesson
+            figure.for-teacher
+            header
+            .title,
+        #app .global-template-mobile_lesson figure.teaching-method,
+        #app
+            .global-template-mobile_lesson
+            figure.teaching-method
+            header
+            .title,
+        #app .global-template-mobile_lesson table dt,
+        #app .global-template-mobile_lesson table ol,
+        #app .global-template-mobile_lesson table p,
+        #app .global-template-mobile_lesson table ul {
+            color: #53575B;
+            color: var(--grey40);
+        }
+
+        #app .global-template-mobile_lesson aside.annotation aside.quote,
+        #app .global-template-mobile_lesson aside.annotation blockquote,
+        #app .global-template-mobile_lesson aside.more-info aside.quote,
+        #app .global-template-mobile_lesson aside.more-info blockquote,
+        #app .global-template-mobile_lesson aside.sidebar aside.quote,
+        #app .global-template-mobile_lesson aside.sidebar blockquote,
+        #app .global-template-mobile_lesson figure.for-teacher aside.quote,
+        #app .global-template-mobile_lesson figure.for-teacher blockquote,
+        #app
+            .global-template-mobile_lesson
+            figure.teaching-method
+            aside.quote,
+        #app
+            .global-template-mobile_lesson
+            figure.teaching-method
+            blockquote,
+        #app .preach-my-gospel-a-guide-to-missionary-service .bullet li p,
+        #app
+            .preach-my-gospel-a-guide-to-missionary-service
+            .for-teacher
+            > section
+            > header
+            > .title,
+        #app
+            .preach-my-gospel-a-guide-to-missionary-service
+            .no-marker
+            li
+            p,
+        #app .preach-my-gospel-a-guide-to-missionary-service aside.quote p,
+        #app
+            .preach-my-gospel-a-guide-to-missionary-service
+            aside.quote
+            .citation-info
+            > p,
+        #app
+            .preach-my-gospel-a-guide-to-missionary-service[data-uri$='how-do-i-use-time-wisely']
+            .decimal
+            li
+            p,
+        #app
+            .preach-my-gospel-a-guide-to-missionary-service:not([data-uri$='lesson-4-the-commandments']):not([data-uri$='lesson-5-laws-and-ordinances']):not([data-uri$='introduction-how-can-i-best-use-preach-my-gospel'])
+            .body-block
+            > section:last-of-type
+            > header
+            > h2 {
+            color: #212225;
+            color: var(--text120);
+        }
+
+        #app .preach-my-gospel-a-guide-to-missionary-service .credit > p {
+            color: #7d7d7d;
+        }
+
+        #app .proclamations h1,
+        #app .proclamations header > .subtitle,
+        #app .proclamations figure .title,
+        #app .proclamations .byline p,
+        #app .proclamations .epigraph {
+            color: #5b1400;
+        }
+}
+
+
+/*# sourceMappingURL=overrides.20e73528d01d44432c56.css.map*/
